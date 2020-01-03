@@ -19,13 +19,13 @@ session = boto3.Session(
 )
 # Create ec2 resource
 ec2 = session.resource("ec2")
-# Create instance object
-instance = ec2.Instance(os.environ["INSTANCE_ID"])
 
 
 # Main endpoint for loading the webpage
 @app.route('/')
 def index():
+    # Create instance object
+    instance = ec2.Instance(os.environ["INSTANCE_ID"])
     if instance.state['Code'] == 16:
         # Attempt to ping Minecraft server... if failed, assume server is booting up
         try:
