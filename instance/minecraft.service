@@ -1,0 +1,24 @@
+[Unit]
+Description=Minecraft Architect Server
+After=network.target
+
+
+[Service]
+WorkingDirectory=/opt/minecraft/server
+User=minecraft
+Group=minecraft
+Type=forking
+
+ExecStart=/usr/bin/screen -dmS minecraft /usr/bin/java -Xms1536M -Xmx1536M -jar server.jar nogui
+
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say SERVER SHUTTING DOWN. Saving map..."\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "save-all"\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "stop"\\015'
+ExecStop=/bin/sleep 10
+
+Restart=on-failure
+RestartSec=60s
+
+
+[Install]
+WantedBy=multi-user.target
