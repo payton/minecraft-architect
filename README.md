@@ -45,7 +45,22 @@ An AWS-hosted Minecraft server that you only pay for when it's being used. Minec
 1. Create the SystemD Unit file and set its contents to `/instance/minecraft.service` by `touch /etc/systemd/system/minecraft.service` and editing its contents
 1. Enable the system file `systemctl enable minecraft.service`
 1. The server should be available shortly at your server's public IP address on port 25565. View the server status by running `tail /opt/minecraft/server/logs/latest.log`
-    
+
+#### Web Server Configuration
+1. Create a Heroku account and install the Heroku CLI
+1. In your project directory, run `heroku create PROJECT_NAME`
+1. Set the configuration variables with those that were noted earlier. Do this by filling in the following command or editing the configuration variables in your Herokuapp dashboard
+    ```bash
+    heroku config:set \
+        AWS_ACCESS_KEY_ID=test \
+        AWS_SECRET_ACCESS_KEY=test \
+        INSTANCE_ID=instanceid \
+        REGION_NAME=regionname \
+        SERVER_PASSWORD=serverpassword
+    ```
+1. Push the project `git push heroku master`
+1. The resulting URL will give you access to start the server
+
 ## Sources
 * https://github.com/trevor-laher/OnDemandMinecraft
 * https://minecraft.gamepedia.com/Tutorials/Server_startup_script
