@@ -4,6 +4,10 @@ import json
 import time
 import subprocess
 
+"""
+Source: https://gist.github.com/MarshalX/40861e1d02cbbc6f23acd3eced9db1a0
+"""
+
 
 class StatusPing:
     """ Get the ping status for the Minecraft server """

@@ -67,3 +67,4 @@ An AWS-hosted Minecraft server that you only pay for when it's being used. Minec
 * https://minecraft.gamepedia.com/Tutorials/Server_startup_script
 * https://wiki.vg/Server_List_Ping
 * https://gist.github.com/MOZGIII/4529750
+* https://gist.github.com/MarshalX/40861e1d02cbbc6f23acd3eced9db1a0
