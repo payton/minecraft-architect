@@ -44,6 +44,7 @@ An AWS-hosted Minecraft server that you only pay for when it's being used. Minec
 1. Accept the eula by creating a `eula.txt` file with `eula=true` as its contents. `echo "eula=true" >> /opt/minecraft/server/eula.txt`
 1. Create the SystemD Unit file and set its contents to `/instance/minecraft.service` by `touch /etc/systemd/system/minecraft.service` and editing its contents
 1. Enable the system file `systemctl enable minecraft.service`
+1. Next, copy `instance/autoshutdown.py` and `instance/crontab` to your sudo home directory and run `sudo crontab /home/ubuntu/crontab -u ubuntu`. This will enable periodic player count checks and shutdown the server if it is idle for 5 minutes
 1. The server should be available shortly at your server's public IP address on port 25565. View the server status by running `tail /opt/minecraft/server/logs/latest.log`
 
 #### Web Server Configuration
