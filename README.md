@@ -52,8 +52,8 @@ An AWS-hosted Minecraft server that you only pay for when it's being used. Minec
 1. Set the configuration variables with those that were noted earlier. Do this by filling in the following command or editing the configuration variables in your Herokuapp dashboard
     ```bash
     heroku config:set \
-        AWS_ACCESS_KEY_ID=test \
-        AWS_SECRET_ACCESS_KEY=test \
+        AWS_ACCESS_KEY_ID=awsaccesskey \
+        AWS_SECRET_ACCESS_KEY=awssecretaccesskey \
         INSTANCE_ID=instanceid \
         REGION_NAME=regionname \
         SERVER_PASSWORD=serverpassword
@@ -66,4 +66,3 @@ An AWS-hosted Minecraft server that you only pay for when it's being used. Minec
 * https://minecraft.gamepedia.com/Tutorials/Server_startup_script
 * https://wiki.vg/Server_List_Ping
 * https://gist.github.com/MOZGIII/4529750
-* 
